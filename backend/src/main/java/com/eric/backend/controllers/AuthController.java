@@ -20,6 +20,12 @@ public class AuthController {
         String username = body.get("username");
         String password = body.get("password");
 
+        // TODO sanitize input
+        // TODO escape special characters
+        // TODO validate URL
+        // TODO username characters
+        // TODO password characters
+
         try {
             authService.register(username, password);
             return ResponseEntity.ok(Map.of("message", "User registered successfully"));
@@ -32,6 +38,12 @@ public class AuthController {
     public ResponseEntity<?> login(@RequestBody Map<String, String> body) {
         String username = body.get("username");
         String password = body.get("password");
+
+        // TODO sanitize input
+        // TODO escape special characters
+        // TODO validate URL
+        // TODO username characters
+        // TODO password characters
 
         if (authService.authenticate(username, password)) {
             return ResponseEntity.ok(Map.of("message", "Login successful"));
